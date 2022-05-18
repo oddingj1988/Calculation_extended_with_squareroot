@@ -1,4 +1,5 @@
 import math
+from unittest import skip
 
 from calcu import calcu_function
 from calcu import sr_function
@@ -9,11 +10,12 @@ operator = ""
 
 #Asks if you want to calculate
 calculating = input("\nDo you want to calculate? Y/N: ")
-operator = input("\nFill in operator: |/|-|+|*|^|sr| : ")
 
-if calculating is "N":
+if calculating == "N":
     quit()
-elif calculating is not "Y":
+elif calculating == "Y":
+    operator = input("\nFill in operator: |/|-|+|*|^|sr| : ")
+elif calculating != "Y":
     calculating = input("\nWrong input, do you want to calculate? Y/N: ")
 
 #Does the calculating
@@ -22,10 +24,11 @@ while calculating == "Y":
         numbSr = int(input("\nFind square root of number: "))
         sr_function(numbSr, operator,)
         operator = input("\nFill in operator: |/|-|+|*|^|sr| : ")
-    elif calculating == "Y" and operator is not "sr":
+    elif calculating == "Y" and operator != "sr":
         numbOne = int(input("\nFirst number: "))
         numbTwo = int(input("\nSecond number: "))
         calcu_function(operator, numbOne, numbTwo)
-        operator = input("\nFill in operator: |/|-|+|*|^|sr| : ")
+    elif calculating == "N":
+        quit()
 
 exit()

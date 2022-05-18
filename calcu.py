@@ -51,3 +51,5 @@ def sr_function(numbSr, operator):
         print("\nThe answer is: \n")
         print(answ)
         calculating = input("\nDo you want to calculate? Y/N: ")
+        if calculating == "N":
+            exit()
